@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ADD STYLES LINK -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- ADD GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,22 +16,26 @@
     <title>Digital Agencey - Landing Page</title>
   </head>
   <body>
+    <!-- LOADER -->
+    <div class="loader" id="loader"></div>
+    <!-- BACKGROUND CIRCLE -->
     <span class="circle"></span>
+    <!-- HEADER -->
     <header class="header" id="header">
       <nav class="navbar">
-        <a href="#" class="nav-logo">Digital Agency</a>
+        <a href="index.html" class="nav-logo">Digital Agency</a>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="#about" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Testimonials</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
         <div class="hamburger" onclick="lockScroll();">
@@ -39,6 +45,7 @@
         </div>
       </nav>
     </header>
+    <!-- HERO SECTION -->
     <section class="main">
       <div class="wrapper">
         <div class="main-left">
@@ -57,7 +64,8 @@
         </div>
       </div>
     </section>
-    <aside class="companies">
+    <!-- COMPANIES SECTION -->
+    <aside class="companies" id="about">
       <p>Trusted by 4,000+ companies</p>
       <div class="wrapper">
         <img src="./images/spotify.svg" alt="" />
@@ -66,6 +74,7 @@
         <img src="./images/zoom.svg" alt="" />
       </div>
     </aside>
+    <!-- BRANDING SECTION -->
     <section class="branding">
       <div class="wrapper">
         <div class="branding-left">
@@ -85,6 +94,7 @@
       </div>
     </section>
     <span class="circle-2"></span>
+    <!-- CUSTOME SECTION -->
     <section class="custome">
       <div class="wrapper">
         <div class="custome-left">
@@ -100,7 +110,8 @@
         </div>
       </div>
     </section>
-    <section class="testimonal">
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonal" id="testimonials">
       <p class="title">TESTIMONIALS</p>
       <h1>Read What Other have to Say</h1>
       <div class="wrapper">
@@ -142,7 +153,8 @@
         </div>
       </div>
     </section>
-    <section class="contact">
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
       <div class="wrapper">
         <div class="contact-left">
           <img src="./images/customer-support.svg" alt="" />
@@ -157,6 +169,7 @@
         </div>
       </div>
     </section>
+    <!-- FOOTER SECTION -->
     <div class="footer-section">
       <footer>
         <div class="wrapper">

@@ -1,3 +1,5 @@
+/* ============= VARIABLES =========== */
+
 :root {
   --dark-black: #1f242d;
   --medium-black: #272d38;
@@ -9,6 +11,33 @@
   --medium-black: #272d38;
   --light-black: #313846;
 }
+
+/* ============= SCROLLBAR STYLES =========== */
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px var(--light-black);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8eadd5;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-black);
+}
+
+/* ============= GENERAL STYLES =========== */
+
 *,
 *::before,
 *::after {
@@ -19,10 +48,12 @@
 
 html {
   font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
+
 body {
   min-width: 300px;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   background: #fdfcfc;
 }
@@ -34,23 +65,25 @@ li {
 a {
   text-decoration: none;
 }
+
 header {
   margin: 0 auto;
   margin-top: 46px;
   max-width: 90%;
+  z-index: 999;
+  position: relative;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.07);
-  background-color: #000;
-  /* z-index: 999; */
+
+section,
+aside,
+footer {
+  margin: 0 auto;
+  margin-top: 46px;
+  max-width: 90%;
 }
-.lock-scroll {
-  overflow: hidden;
-}
+
+/* ============= BACKGROUND SHADOW(CIRCLE) STYLES =========== */
+
 .circle {
   position: absolute;
   width: 679px;
@@ -61,6 +94,29 @@ header {
   filter: blur(306px);
   z-index: -999;
 }
+
+/* ============= LOADER STYLES =========== */
+
+.loader {
+  margin: 200px auto;
+  border: 20px solid #eaf0f6;
+  border-radius: 50%;
+  border-top: 20px solid #8eadd5;
+  width: 200px;
+  height: 200px;
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============= NAVBAR STYLES =========== */
 
 .navbar {
   display: flex;
@@ -114,11 +170,13 @@ header {
   cursor: pointer !important;
 }
 
+/* ============= NAVBAR RESPONSIVE STYLES =========== */
+
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 5rem;
+    top: 6rem;
     flex-direction: column;
     background-color: #fff;
     width: 100%;
@@ -158,14 +216,8 @@ header {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-/* main section start */
-section,
-aside,
-footer {
-  margin: 0 auto;
-  margin-top: 46px;
-  max-width: 90%;
-}
+
+/* ============= MAIN SECTION STYLES =========== */
 
 .main .wrapper {
   min-height: 450px;
@@ -218,17 +270,22 @@ footer {
   max-width: 450px;
 }
 .main-right img {
-  animation: anim 1.5s infinite ease;
+  animation: anim 2s infinite linear;
   animation-fill-mode: backwards;
 }
 @keyframes anim {
-  from {
-    transform: translateX(-100px);
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    transform: translateX(0);
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
+
+/* ============= MAIN SECTION RESPONSIVE STYLES =========== */
 
 @media (max-width: 1090px) {
   .main .main-left h2 {
@@ -263,8 +320,9 @@ footer {
     font-size: 16px;
   }
 }
-/* main section end */
-/* companies start */
+
+/* ============= COMPANIES SECTION STYLES =========== */
+
 .companies {
   max-width: 70%;
   margin: 0 auto;
@@ -288,6 +346,9 @@ footer {
   text-transform: capitalize;
   color: #667085;
 }
+
+/* ============= COMPANIES SECTION RESPONSIVE STYLES =========== */
+
 @media (max-width: 910px) {
   .companies {
     max-width: 90%;
@@ -307,7 +368,9 @@ footer {
     height: 24px;
   }
 }
-/* branding start */
+
+/* ============= BRANDING SECTION STYLES =========== */
+
 .branding .wrapper,
 .custome .wrapper {
   display: flex;
@@ -343,29 +406,38 @@ footer {
   cursor: pointer;
 }
 .branding-left img {
-  animation: anim2 1.5s infinite ease;
+  animation: anim2 2s infinite ease;
   animation-fill-mode: backwards;
 }
 @keyframes anim2 {
-  from {
-    transform: translateX(100px);
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    transform: translateX(0);
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 .custome-right img {
-  animation: anim3 1.5s infinite ease;
+  animation: anim3 2s infinite ease;
   animation-fill-mode: backwards;
 }
 @keyframes anim3 {
-  from {
-    transform: translateX(-100px);
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    transform: translateX(0);
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
+
+/* ============= BRANDING SECTION RESPONSIVE STYLES =========== */
+
 @media (max-width: 1090px) {
   .branding .wrapper,
   .custome .wrapper,
@@ -431,7 +503,9 @@ footer {
     font-size: 14px !important;
   }
 }
-/* testimonal start */
+
+/* ============= TESTIMONIAL SECTION STYLES =========== */
+
 .testimonal {
   padding-bottom: 136px;
 }
@@ -511,6 +585,9 @@ footer {
   text-transform: capitalize;
   color: #272d38;
 }
+
+/* ============= TESTIMONIAL SECTION RESPONSIVE STYLES =========== */
+
 @media (max-width: 910px) {
   .testimonal .wrapper {
     flex-wrap: wrap;
@@ -544,8 +621,43 @@ footer {
   .testimonal h1 {
     font-size: 32px;
   }
+  @keyframes anim {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim2 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim3 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 }
-/* contact section */
+
+/* ============= CONTACT SECTION STYLES =========== */
+
 .contact {
   background: #f6f6f6;
   border-radius: 20px;
@@ -573,6 +685,9 @@ footer {
   color: #272d38;
   margin-bottom: 40px;
 }
+
+/* ============= CONTACT SECTION RESPONSIVE STYLES =========== */
+
 @media (max-width: 600px) {
   .contact .wrapper .contact-left {
     display: none;
@@ -583,13 +698,20 @@ footer {
     padding: 0 30px;
   }
 }
+.branding-right .custome-left {
+  transition: transform 0.3s ease;
+}
 .branding-right a:hover img,
 .custome-left a:hover img {
-  transform: rotate(180deg);
+  transform: translateX(15px) scale(1.1);
 }
-/* footer section */
+
+/* ============= FOOTER SECTION STYLES =========== */
+
 .footer-section {
-  background: #f6f6f6;
+  background-color: #f6f6f6;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 footer .wrapper {
   padding: 100px 0;
@@ -632,7 +754,7 @@ footer .wrapper .text a {
   line-height: 100%;
   text-transform: capitalize;
   color: #272d38;
-  transition: 0.3s linear;
+  transition: 0.1s ease-in;
 }
 footer .wrapper .text a:hover {
   color: #8eadd5;
@@ -645,6 +767,9 @@ footer .author {
   color: #272d38;
   padding-bottom: 18px;
 }
+
+/* ============= FOOTER SECTION RESPONSIVE STYLES =========== */
+
 @media (max-width: 700px) {
   footer .wrapper {
     text-align: center;
@@ -656,5 +781,78 @@ footer .author {
   }
   footer .wrapper {
     gap: 50px;
+  }
+}
+
+/* ============= KEYFRAMES RESPONSIVE STYLES =========== */
+
+@media (max-width: 1000px) {
+  @keyframes anim {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(8%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim2 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(8%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim3 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(8%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+@media (max-width: 400px) {
+  @keyframes anim {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(6%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim2 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(6%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes anim3 {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(6%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
 }
