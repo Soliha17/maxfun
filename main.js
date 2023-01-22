@@ -9,7 +9,19 @@ document.onreadystatechange = function () {
   }
 };
 
+// FOR FIXED HEADER
 
+window.addEventListener("scroll", myFunction);
+
+var header = document.querySelector(".header-wrapper");
+
+function myFunction() {
+  if (window.pageYOffset > 30) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 // FOR HAMBURGER ( MOBILE MENU )
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");

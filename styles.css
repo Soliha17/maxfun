@@ -44,6 +44,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 html {
@@ -68,10 +69,11 @@ a {
 
 header {
   margin: 0 auto;
-  margin-top: 46px;
-  max-width: 90%;
+  padding-top: 46px;
+  height: 72px;
   z-index: 999;
   position: relative;
+  max-width: 90%;
 }
 
 section,
@@ -81,7 +83,16 @@ footer {
   margin-top: 46px;
   max-width: 90%;
 }
-
+.sticky {
+  padding-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.07);
+  background-color: #fdfcfc;
+  z-index: 99999;
+}
 /* ============= BACKGROUND SHADOW(CIRCLE) STYLES =========== */
 
 .circle {
@@ -107,7 +118,6 @@ footer {
   animation: spinner 4s linear infinite;
 }
 
-
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -119,7 +129,7 @@ footer {
 
 /* ============= WHEN MOBILE MENU OPENED ADD TO BODY SOME STYLES =========== */
 
-.lock-scroll{
+.lock-scroll {
   overflow: hidden;
 }
 
@@ -209,9 +219,9 @@ footer {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 100px;
+    top: 92px;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #fdfcfc;
     width: 100%;
     height: calc(100% - 5rem);
     border-radius: 10px;
