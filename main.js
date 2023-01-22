@@ -26,6 +26,7 @@ function mobileMenu() {
 function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
+  document.body.classList.remove("lock-scroll");
 }
 
 // FOR BACK TO TOP BUTTON
