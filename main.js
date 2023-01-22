@@ -49,3 +49,9 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+/* ============= WHEN MOBILE MENU OPENED ADD TO BODY SOME CLASS[LOCK-SCROLL] =========== */
+
+ function lockScroll() {
+   document.body.classList.toggle("lock-scroll");
+ }
